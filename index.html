@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista de Tarefas</title>
+    </head>
+        <style>
+          body {background-color: wheat;} 
+          .input {
+            background-color:green ;
+    
+          }
+        </style>
+    <body>
+        
+        <h1>Tarefas Pessoais</h1>
+        <ul>
+            <li>Lavar a louça</li>
+            <li>Dar ração para o cão</li>
+            <li>Trocar a areia do gato</li>
+        </ul>
+        <input style="background-color: wheat;">
+        <button style = "background-color:green; color:white"
+        <button onclick="add()">Nova Tarefa</button>
+        <script>
+            function add() {
+              const ul = document.querySelector("ul") 
+              const input = document.querySelector("input")
+              const tarefa = input.value
+              
+              const li = document.createElement("li")
+              li.innerText = tarefa
+              ul.appendChild(li)
+            
+        input.value = ""
+            }
+        </script>
+        
+    </body>
+</html>
