@@ -13,40 +13,36 @@
     <body>
         
         <h1>Tarefas Pessoais</h1>
-        <ul>
-            <li>Lavar a louça</li>
-            <li>Dar ração para o cão</li>
-            <li>Trocar a areia do gato</li>
-        </ul>
+        <ul></ul>
         <input>
         <button onclick="add()">Nova Tarefa</button>
         <script>
         
-          // estado da aplicação
-        const tarefas = ["Lavar a louça', 'Dar ração para o cão', 'Trocar a areia do gato"] 
+        // estado da aplicação
+        const tarefas = ['Lavar a louça', 'Dar ração para o cão', 'Trocar a areia do gato'] 
 
-            function add() {
+        // alteradores de estado da aplicação
+              function add() { 
               const input = document.querySelector("input")
               const tarefa = input.value 
               tarefas.push(tarefa)
               input.value = ""
               render()
             }
+            // mostrar estado na tela
+              function render(){
+                const ul = document.querySelector("ul")
+                ul.innerHTML = null
 
-              function render () {
-              const ul = document querySelector("ul")
-
-              tarefas.forEach(function(tarefa){
-                console.log(tarefa)
-                const li = document.createElement("li")
-                li.innerText = tarefa
-                ul.appendChild(li)
-              
-              
-             })
-            
-        input.value = ""
+                  tarefas.forEach(function (tarefa){
+                  const li = document.createElement("li")
+                  li.innerText = tarefa
+                  ul.appendChild(li)
+              }) 
             }
+
+        // iniciar
+          render()
         </script>
         
     </body>
