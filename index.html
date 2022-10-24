@@ -18,18 +18,32 @@
             <li>Dar ração para o cão</li>
             <li>Trocar a areia do gato</li>
         </ul>
-        <input style="background-color: wheat;">
-        <button style = "background-color:green; color:white"
+        <input>
         <button onclick="add()">Nova Tarefa</button>
         <script>
+        
+          // estado da aplicação
+        const tarefas = ["Lavar a louça', 'Dar ração para o cão', 'Trocar a areia do gato"] 
+
             function add() {
-              const ul = document.querySelector("ul") 
               const input = document.querySelector("input")
-              const tarefa = input.value
+              const tarefa = input.value 
+              tarefas.push(tarefa)
+              input.value = ""
+              render()
+            }
+
+              function render () {
+              const ul = document querySelector("ul")
+
+              tarefas.forEach(function(tarefa){
+                console.log(tarefa)
+                const li = document.createElement("li")
+                li.innerText = tarefa
+                ul.appendChild(li)
               
-              const li = document.createElement("li")
-              li.innerText = tarefa
-              ul.appendChild(li)
+              
+             })
             
         input.value = ""
             }
