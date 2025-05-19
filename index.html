@@ -22,15 +22,19 @@
         <script>
         
         // estado da aplicação
-        const tarefas = ['Lavar a louça', 'Dar ração para o cão', 'Trocar a areia do gato'] 
+        const tarefas = []; 
 
         // alteradores de estado da aplicação
               function add() { 
-              const input = document.querySelector("input")
-              const tarefa = input.value 
-              tarefas.push(tarefa)
-              input.value = ""
-              render()
+              const input = document.querySelector("input");
+              const tarefa = input.value;
+              if (tarefa) { // Verifica se a tarefa não está vazia
+                tarefas.push(tarefa);
+                input.value = ""; // Limpa o campo de entrada
+                render(); // Atualiza a lista
+            } else {
+                alert("Por favor, insira uma tarefa."); // Alerta se o campo estiver vazio
+              }
             }
             // mostrar estado na tela
               function render(){
