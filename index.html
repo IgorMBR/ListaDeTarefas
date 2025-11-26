@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Lista de Tarefas</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="lista.js"></script>
+  <title>Lista de Tarefas</title>
     </head>
         <style>
           body {background-color: blanchedalmond;} 
@@ -11,46 +14,12 @@
           h1{
             font-family:sans-serif;
           }
-
         </style>
     <body>
-        
         <h1>Tarefas Pessoais</h1>
         <ul></ul>
         <input>
         <button onclick="add()">Nova Tarefa</button>
-        <script>
-        
-        // estado da aplicação
-        const tarefas = []; 
-
-        // alteradores de estado da aplicação
-              function add() { 
-              const input = document.querySelector("input");
-              const tarefa = input.value;
-              if (tarefa) { // Verifica se a tarefa não está vazia
-                tarefas.push(tarefa);
-                input.value = ""; // Limpa o campo de entrada
-                render(); // Atualiza a lista
-            } else {
-                alert("Por favor, insira uma tarefa."); 
-              }
-            }
-            // mostrar estado na tela
-              function render(){
-                const ul = document.querySelector("ul")
-                ul.innerHTML = null
-
-                  tarefas.forEach(function (tarefa){
-                  const li = document.createElement("li")
-                  li.innerText = tarefa
-                  ul.appendChild(li)
-              }) 
-            }
-
-        // iniciar
-          render()
-        </script>
         <p>Feito por Igor Baer</p>
     </body>
 </html>
